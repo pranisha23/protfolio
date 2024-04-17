@@ -3,9 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-    <h1>Hello wlc to portfolio</h1>
+    <!-- header -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">Pranisha Raya</div>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                
+            </nav>
+            <div class="row">
+                <div class="header-img">
+                    <img src="assets/about-pic3.jpg" alt="">
+                </div>
+                <div class="header-text">
+                    <p>Hello, I'm <br> <span>Pranisha</span> Raya</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="assets/about-pic3.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Welcome to my portfolio! I've honed my skills in frontend development with years of practice. My journey in frontend development has been defined by a commitment to innovation, creativity, and continuous learning.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>HTML CSS</span><br>Frontend Development</li>
+                            <li><span>JavaScript</span><br>Frontend Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020</span><br>Plus 2</li>
+                            <li><span>2021</span><br>BSc CSIT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="assets/project-6.png">
+                    <div class="layer">
+                        <h3>Ecommerce Website</h3>
+                        <p>This site helps finding latest collection of xg girl group items.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="assets/project-4.png">
+                    <div class="layer">
+                        <h3>Music Player</h3>
+                        <p>This site facilitates user with music player</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="assets/project-5.png">
+                    <div class="layer">
+                        <h3>Note App</h3>
+                        <p>This site helps record notes.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+    <!-- contact -->
+    <div class="contact">
+        <div class="container">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i>rayapranisha989@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/pranisha.raya.31/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/pranisha_11/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/pranisha-raya-9671852aa/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="" download class="btn btn2">Download CV</a>
+                </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright &#169; 2024 Pranisha Raya. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemeu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemeu.style.right = "0";
+        }
+
+        function closemenu(){
+            sidemeu.style.right = "-200px";
+        }
+    </script>
+    
 </body>
 </html>
